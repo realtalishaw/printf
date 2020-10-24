@@ -1,0 +1,44 @@
+.TH _printf "25 October 2020" "0.32" "Printf man page"
+.SH NAME
+.B printf
+- format and print data
+.SH SYNOPSIS
+printf FORMAT [ARGUMENT] ...
+.SH DESCRIPTION
+Format controls the output as in C _printf. Interpreted sequences are:
+.IP '\\'
+double quote
+.IP \\
+backslash
+.IP a
+alert (BEL)
+.IP b
+backspace
+.IP c
+produce no further output
+.IP e
+escape
+.IP f
+form feed
+.IP n
+new line
+.IP r
+carriage return
+.IP t
+horizontal tab
+.IP v
+vertical tab
+.IP NNN
+byte with octal value NNN (1 to 3 digits)
+.IP xHH
+byte with hexadecimal value HHH ( 1 to 2 digits)
+.IP UHHHHHHHH
+unicode character with hex value HHHHHHHH (8 digits)
+.IP %%
+a singe %
+.IP %b
+ARGUMENT as a string with '\\' escapes interpreted
+.SH AUTHOR
+    Written by Talisha White & Hector Lozano
+.SH SEE ALSO
+none
