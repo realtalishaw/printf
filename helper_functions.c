@@ -16,13 +16,13 @@ int _strlen_recursion(char *s)
 }
 
 /**
- * itoa - convert an interger to a string
+ * _itoa - convert an interger to a string
  * @i: ingerger
  * @strout: Our strout
  * @base: Base
  * Return: character from interger
  */
-char *itoa(int i, char *strout, int base)
+char *_itoa(int i, char *strout, int base)
 {
 	char *str = strout;
 	int digit, sign = 0;
@@ -31,6 +31,8 @@ char *itoa(int i, char *strout, int base)
 		i *= -1;
 	}
 
+	return (str);
+}
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
