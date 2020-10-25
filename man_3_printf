@@ -1,43 +1,33 @@
 .TH _printf "25 October 2020" "0.32" "Printf man page"
 .SH NAME
-.B printf
+.B _printf
 - format and print data
 .SH SYNOPSIS
 printf FORMAT [ARGUMENT] ...
 .SH DESCRIPTION
-Format controls the output as in C _printf. Interpreted sequences are:
-.IP '\\'
-double quote
-.IP \\
-backslash
-.IP a
-alert (BEL)
-.IP b
-backspace
-.IP c
-produce no further output
-.IP e
-escape
-.IP f
-form feed
-.IP n
-new line
-.IP r
-carriage return
-.IP t
-horizontal tab
-.IP v
-vertical tab
-.IP NNN
-byte with octal value NNN (1 to 3 digits)
-.IP xHH
-byte with hexadecimal value HHH ( 1 to 2 digits)
-.IP UHHHHHHHH
-unicode character with hex value HHHHHHHH (8 digits)
-.IP %%
-a singe %
+Format specifiers with _printf are as follows:
+.IP  %c
+Character
+.IP %d
+Signed Integer
+.IP %s
+String
+.IP %i
+Unsigned Integer
 .IP %b
-ARGUMENT as a string with '\\' escapes interpreted
+Unsigned Integer coverted to binary
+.IP %u
+Unsigned Integer
+.IP %o
+Octal Representation
+.IP %x or %X
+Hexadecimal Representation
+.IP %p
+Pointer
+.IP %r
+Prints the Reversed String
+.IP %R
+Prints the rot13'ed string
 .SH AUTHOR
     Written by Talisha White & Hector Lozano
 .SH SEE ALSO
