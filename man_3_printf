@@ -1,0 +1,34 @@
+.TH _printf "25 October 2020" "0.32" "Printf man page"
+.SH NAME
+.B _printf
+- format and print data
+.SH SYNOPSIS
+printf FORMAT [ARGUMENT] ...
+.SH DESCRIPTION
+Format specifiers with _printf are as follows:
+.IP  %c
+Character
+.IP %d
+Signed Integer
+.IP %s
+String
+.IP %i
+Unsigned Integer
+.IP %b
+Unsigned Integer coverted to binary
+.IP %u
+Unsigned Integer
+.IP %o
+Octal Representation
+.IP %x or %X
+Hexadecimal Representation
+.IP %p
+Pointer
+.IP %r
+Prints the Reversed String
+.IP %R
+Prints the rot13'ed string
+.SH AUTHOR
+    Written by Talisha White & Hector Lozano
+.SH SEE ALSO
+none
