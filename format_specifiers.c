@@ -9,6 +9,7 @@
 
 int print_char(va_list list)
 {
+	printf("print_char function\n");
 	_putchar(va_arg(list, int));
 	return (1);
 }
@@ -25,6 +26,7 @@ int print_string(va_list list)
 	int i = 0;
 	char *s;
 
+	printf("inside print_string function\n");
 	s = va_arg(list, char *);
 
 	if (!s)
@@ -32,6 +34,7 @@ int print_string(va_list list)
 
 	while (s[i])
 	{
+		printf("Inside while loop\n");
 		_putchar(s[i]);
 		i++;
 	}
@@ -50,6 +53,8 @@ int print_int(va_list list)
 	int i = 0;
 	char *s;
 
+	printf("inside print_int function\n");
+
 	_itoa(va_arg(list, int));
 	s = va_arg(list, char *);
 
@@ -58,6 +63,7 @@ int print_int(va_list list)
 
 	while (s[i])
 	{
+		printf("inside while loop\n");
 		_putchar(s[i]);
 		i++;
 	}
@@ -80,10 +86,11 @@ int print_u_int(va_list list)
  * print_binary -
  * @list:
  *
- * Return: 
+ * Return:  zero
  */
 
 int print_binary(va_list list)
 {
+	printf("Inside the print_binary function\n");
 	return (0);
 }

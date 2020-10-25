@@ -21,7 +21,7 @@ int print_hex(va_list list);
 int print_rev(va_list list);
 int print_rot13(va_list list);
 int (*function(char))(va_list list);
-int (*get_format_func(char *s))(va_list list);
+int (*get_format_func(char s))(va_list list);
 
 /**
  * struct formats - dffgd
