@@ -7,7 +7,7 @@
  *
  */
 
-int (*get_format_func(char *s))(va_list list)
+int (*get_format_func(char s))(va_list list)
 {
 	format_specifiers fmt[] = {
 		{"c", print_char},
@@ -23,15 +23,22 @@ int (*get_format_func(char *s))(va_list list)
 	};
 
 	int i = 0;
+	printf("inside get_format function\n");
 
 	while (i < 9)
 	{
-		if (*(fmt[i].specifier) == *s)
+
+		if (*(fmt[i].specifier) == s)
 			{
+				printf("found specifier: %s\n", fmt[i].specifier
+					);
+
 				return (fmt[i].f);
 			}
+		printf("specifier not found\n");
 			i++;
 	}
+	printf("exiting file none found\n");
 	return (0);
 }
 
