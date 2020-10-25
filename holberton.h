@@ -1,6 +1,7 @@
 #ifndef HOLBERTON_H_
 #define HOLBERTON_H_
 
+char *itoa(int i, char *strout, int base);
 int _printf(const char *format, ...);
 int _strlen_recursion(char *s);
 int _putchar(char c);
