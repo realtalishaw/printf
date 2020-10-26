@@ -30,8 +30,18 @@ char *_itoa(int i, char *strout, int base)
 		sign = 1;
 		i *= -1;
 	}
+	while(i) {
+		digit = i % base;
+		*str = (digit > 9) ? ('A' + digit - 10) : '0' + digit;
+		i = i / base;
+		str ++;
+	}
+	if(sign) {
+		*str++ = '-';
+	}
+	*str = '\0';
 
-	return (str);
+	return strout;
 }
 /**
  * _putchar - writes the character c to stdout
@@ -49,7 +59,7 @@ int _putchar(char c)
  * strrev - prints string in reverse
  * @s: takes in a string
  */
-void strrev(char *s)
+void _strrev(char *s)
 {
 	int i = 0, c;
 
@@ -58,5 +68,16 @@ void strrev(char *s)
 	c--;
 	for (i = c; i >= 0; i--)
 		_putchar(s[i]);
-	_putchar('\n');
+
+}
+
+/**
+ *
+ *
+ *
+ */
+
+int print_percent(va_list list)
+{
+	_putchar('%');
 }
