@@ -84,5 +84,7 @@ void _strrev(char *s)
 
 int print_percent(va_list list)
 {
+	va_arg(list, int);
 	_putchar('%');
+	return (0);
 }
