@@ -1,10 +1,9 @@
 #include "holberton.h"
 
 /**
- * get_op_func - fsfsd
- * @s: jfgkjgdk
- *
- * Return: fjdkfjds
+ * print_char - Prints our char
+ * @list:  macro varible
+ * Return: 1
  */
 
 int print_char(va_list list)
@@ -15,10 +14,9 @@ int print_char(va_list list)
 }
 
 /**
- * get_op_func - fsfsd
- * @s: jfgkjgdk
- *
- * Return: fjdkfjds
+ * print_string - Prints string required
+ * @list: our macro varible
+ * Return: interger
  */
 
 int print_string(va_list list)
@@ -41,10 +39,9 @@ int print_string(va_list list)
 }
 
 /**
- * get_op_func - fsfsd
- * @s: jfgkjgdk
- *
- * Return: fjdkfjds
+ * print_int - prints interger
+ * @list: Macro Varible
+ * Return: List
  */
 
 int print_int(va_list list)
@@ -57,53 +54,51 @@ int print_int(va_list list)
 		;
 	for (i = len - 1; i >= 0; i--)
 	{
-      		_putchar(tmp[i]);
+		_putchar(tmp[i]);
 	}
 	return (len);
 
 }
 
 /**
- * get_op_func - fsfsd
- * @s: jfgkjgdk
- *
- * Return: fjdkfjds
+ * print_u_int - Prints an unsigned int
+ * @list: macro vaible
+ * Return: Length required
  */
 
 int print_u_int(va_list list)
 {
 	char tmp[20];
-        int i, len;
+	int i, len;
 
-        _itoa(va_arg(list, int), tmp, 10);
-        for (len = 0; tmp[len] != 0; len++)
-                ;
-        for (i = len - 1; i >= 0; i--)
-        {
-                _putchar(tmp[i]);
-        }
-        return (len);
+	_itoa(va_arg(list, int), tmp, 10);
+	for (len = 0; tmp[len] != 0; len++)
+		;
+	for (i = len - 1; i >= 0; i--)
+	{
+		_putchar(tmp[i]);
+	}
+	return (len);
 }
 
 /**
- * print_binary -
- * @list:
- *
- * Return:  zero
+ * print_binary - Prints results in binary
+ * @list: macro varible
+ * Return:  length of list
  */
 
 int print_binary(va_list list)
 {
 
 	char tmp[20];
-        int i, len;
+	int i, len;
 
-        _itoa(va_arg(list, int), tmp, 2);
-        for (len = 0; tmp[len] != 0; len++)
-                ;
-        for (i = len - 1; i >= 0; i--)
-        {
-                _putchar(tmp[i]);
-        }
-        return (len);
+	_itoa(va_arg(list, int), tmp, 2);
+	for (len = 0; tmp[len] != 0; len++)
+		;
+	for (i = len - 1; i >= 0; i--)
+	{
+		_putchar(tmp[i]);
+	}
+	return (len);
 }
