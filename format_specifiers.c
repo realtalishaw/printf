@@ -49,6 +49,17 @@ int print_string(va_list list)
 
 int print_int(va_list list)
 {
+	char tmp[20];
+	int i, len;
+
+	_itoa(va_arg(list, int), tmp, 10);
+	for (len = 0; tmp[len] != 0; len++)
+		;
+	for (i = len - 1; i >= 0; i--)
+	{
+      		_putchar(tmp[i]);
+	}
+	return (len);
 
 }
 
@@ -61,7 +72,17 @@ int print_int(va_list list)
 
 int print_u_int(va_list list)
 {
-	return (0);
+	char tmp[20];
+        int i, len;
+
+        _itoa(va_arg(list, int), tmp, 10);
+        for (len = 0; tmp[len] != 0; len++)
+                ;
+        for (i = len - 1; i >= 0; i--)
+        {
+                _putchar(tmp[i]);
+        }
+        return (len);
 }
 
 /**
@@ -74,5 +95,15 @@ int print_u_int(va_list list)
 int print_binary(va_list list)
 {
 
-	return (0);
+	char tmp[20];
+        int i, len;
+
+        _itoa(va_arg(list, int), tmp, 2);
+        for (len = 0; tmp[len] != 0; len++)
+                ;
+        for (i = len - 1; i >= 0; i--)
+        {
+                _putchar(tmp[i]);
+        }
+        return (len);
 }
