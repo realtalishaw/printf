@@ -26,23 +26,28 @@ char *_itoa(int i, char *strout, int base)
 {
 	char *str = strout;
 	int digit, sign = 0;
-	if (i < 0) {
+
+	if (i < 0)
+	{
 		sign = 1;
 		i *= -1;
 	}
-	while(i) {
+	while (i)
+	{
 		digit = i % base;
 		*str = (digit > 9) ? ('A' + digit - 10) : '0' + digit;
 		i = i / base;
-		str ++;
+		str++;
 	}
-	if(sign) {
+	if (sign)
+	{
 		*str++ = '-';
 	}
 	*str = '\0';
 
-	return strout;
+	return (strout);
 }
+
 /**
  * _putchar - writes the character c to stdout
  * @c: The character to print
@@ -56,7 +61,7 @@ int _putchar(char c)
 }
 
 /**
- * strrev - prints string in reverse
+ * _strrev - prints string in reverse
  * @s: takes in a string
  */
 void _strrev(char *s)
@@ -72,9 +77,9 @@ void _strrev(char *s)
 }
 
 /**
- *
- *
- *
+ * print_percent - Function
+ * @list: macro varible
+ * Return: none
  */
 
 int print_percent(va_list list)
