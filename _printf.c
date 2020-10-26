@@ -20,6 +20,7 @@ int _printf(const char *format, ...)
 		{"x", print_hex},
 		{"r", print_rev},
 		{"R", print_rot13},
+		{"%", print_percent},
 		{NULL, NULL}
 	};
 
@@ -38,7 +39,7 @@ int _printf(const char *format, ...)
 		if (format[i] == '%')
 		{
 			i++;
-			while (j < 9)
+			while (j < 10)
 			{
 				if (*(fmt[j].specifier) == format[i])
 				{
@@ -66,7 +67,17 @@ int _printf(const char *format, ...)
 
 int print_octal(va_list list)
 {
-	return (0);
+	char tmp[20];
+        int i, len;
+
+        _itoa(va_arg(list, int), tmp, 8);
+        for (len = 0; tmp[len] != 0; len++)
+                ;
+        for (i = len - 1; i >= 0; i--)
+        {
+                _putchar(tmp[i]);
+        }
+        return (len);
 }
 
 /**
@@ -78,7 +89,17 @@ int print_octal(va_list list)
 
 int print_hex(va_list list)
 {
-	return (0);
+	char tmp[20];
+	int i, len;
+
+	_itoa(va_arg(list, int), tmp, 16);
+	for (len = 0; tmp[len] != 0; len++)
+                ;
+        for (i = len - 1; i >= 0; i--)
+        {
+                _putchar(tmp[i]);
+        }
+        return (len);
 }
 
 /**
