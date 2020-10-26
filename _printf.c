@@ -37,7 +37,10 @@ int _printf(const char *format, ...)
 			while (j < 10)
 			{
 				if (*(fmt[j].specifier) == format[i])
-					fmt[j].f(list), break;
+				{
+					fmt[j].f(list);
+						break;
+				}
 				else
 					j++;
 			}
