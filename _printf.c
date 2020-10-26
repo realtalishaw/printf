@@ -106,6 +106,7 @@ int print_hex(va_list list)
 
 int print_rev(va_list list)
 {
+	va_arg(list, int);
 	return (0);
 }
 
@@ -117,5 +118,6 @@ int print_rev(va_list list)
 
 int print_rot13(va_list list)
 {
+	va_arg(list, int);
 	return (0);
 }
