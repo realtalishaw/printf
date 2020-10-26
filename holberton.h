@@ -26,17 +26,19 @@ int (*get_format_func(char s))(va_list list);
 int print_percent(va_list list);
 
 /**
- * struct formats - dffgd
- * @specifier: fdsgd
- * @f: fdgd
- *
- * Description: dog
+ * struct formats - Typedef struct
+ * @specifier: Our specifer for struct
+ * @f: Pointer
+ * Description: Our structs for process
  */
 
 typedef struct formats
 {
 	char *specifier;
-	int(*f)(va_list list);
+
+	int (*f)(va_list list);
+
+
 } format_specifiers;
 
 
