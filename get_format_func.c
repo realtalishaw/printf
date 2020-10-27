@@ -24,19 +24,20 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 			{
 				if (format[i + 1] == fmt[j].specifier[0])
 				{
-				 	val = fmt[j].f(list);
+					val = fmt[j].f(list);
 					if (val == -1)
 						return (-1);
 					len = len + val;
 					break;
 				}
 			}
-			if (fmt[j].specifier == NULL && format[i + 1] == ' ')
+			if (fmt[j].specifier == NULL && format[i + 1] != ' ')
 			{
 				if (format[i + 1] != '\0')
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
+
 					len = len + 2;
 				}
 				else
