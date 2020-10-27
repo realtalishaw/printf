@@ -35,7 +35,8 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 			{
 				if (format[i + 1] != '\0')
 				{
-			       		_putchar(format[i]);
+					_putchar(format[i]);
+					_putchar(format[i + 1]);
 
 					len = len + 2;
 				}
@@ -46,8 +47,7 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 		}
 			else
 			{
-				_putchar(format[i]);
-				len++;
+				_putchar(format[i]), len++;
 			}
 		}
 	return (len);
