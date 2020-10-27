@@ -13,7 +13,7 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 {
 	int i, j, val, len;
 
-
+	len = 0;
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] == '%')
@@ -37,7 +37,6 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 				{
 					_putchar(format[i]);
 					_putchar(format[i + 1]);
-
 					len = len + 2;
 				}
 				else
