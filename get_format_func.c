@@ -19,12 +19,12 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 		if (format[i] == '%')
 		{
 			while (format[i + 1] == ' ')
-			  i++;
+				i++;
 			for (j = 0; fmt[j].specifier != NULL; j++)
 			{
 				if (format[i + 1] == fmt[j].specifier[0])
 				{
-				 	val = fmt[j].f(list);
+					val = fmt[j].f(list);
 					if (val == -1)
 						return (-1);
 					len = len + val;
@@ -35,7 +35,7 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 			{
 				if (format[i + 1] != '\0')
 				{
-			       		_putchar(format[i]);
+					_putchar(format[i]);
 					_putchar(format[i + 1]);
 
 					len = len + 2;
@@ -47,8 +47,7 @@ int get_format_func(const char *format, format_specifiers fmt[], va_list list)
 		}
 			else
 			{
-				_putchar(format[i]);
-				len++;
+				_putchar(format[i]), len++;
 			}
 		}
 	return (len);
