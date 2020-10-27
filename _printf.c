@@ -9,7 +9,7 @@
 int _printf(const char *format, ...)
 {
 	va_list list;
-	int i = 0, j = 0;
+	int i = 0;
 	format_specifiers fmt[] = {
 		{"c", print_char},
 		{"s", print_string},
@@ -24,32 +24,12 @@ int _printf(const char *format, ...)
 		{NULL, NULL}
 	};
 
-	va_start(list, format);
 	if (!format)
-	{
-		exit(98);
-	}
-	while (format && format[i])
-	{
-		if (format[i] == '%')
-		{
-			i++;
-			while (j < 10)
-			{
-				if (*(fmt[j].specifier) == format[i])
-				{
-					fmt[j].f(list);
-						break;
-				}
-				else
-					j++;
-			}
-		}
-		else
-			_putchar(format[i]);
-		i++;
-	}
-	va_end(list);
+		return (-1);
+
+	va_start(list, format);
+
+	i = get_format_func(format, fmt, list);
 	return (i);
 }
 /**
@@ -58,23 +38,10 @@ int _printf(const char *format, ...)
  * Return: Length
  */
 
-int print_octal(va_list list)
+int print_octal(__attribute__((unused))va_list list)
 {
-	char tmp[20];
-	int i, len;
-
-	_itoa(va_arg(list, int), tmp, 8);
-	for (len = 0; tmp[len] != 0; len++)
-	{
-		;
-	}
-	for (i = len - 1; i >= 0; i--)
-	{
-		_putchar(tmp[i]);
-	}
-	return (len);
+	return (0);
 }
-
 /**
  * print_hex - Prints Hexidecimal
  * @list: Macro Varible
