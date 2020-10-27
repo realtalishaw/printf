@@ -1,12 +1,12 @@
 #include "holberton.h"
 
 /**
- * get_format_func - fsgfsgs
- * @format:
- * @fmt:
- * @list:
+ * get_format_func - Function for file
+ * @format: argument
+ * @fmt: Argument call
+ * @list: Macro varible
  *
- * Return:
+ * Return: out function pulled
  */
 
 int get_format_func(const char *format, format_specifiers fmt[], va_list list)
