@@ -7,7 +7,6 @@
 #include <string.h>
 #include <unistd.h>
 
-#define BUFFSIZE 1024
 
 char *_itoa(int i, char *strout, int base);
 int _printf(const char *format, ...);
@@ -23,7 +22,6 @@ int print_octal(va_list list);
 int print_hex(va_list list);
 int print_rev(va_list list);
 int print_rot13(va_list list);
-int (*get_format_func(char s))(va_list list);
 int print_percent(va_list);
 
 /**
@@ -33,14 +31,16 @@ int print_percent(va_list);
  * Description: Our structs for process
  */
 
-typedef struct formats
+struct formats
 {
 	char *specifier;
 
 	int (*f)(va_list list);
 
 
-} format_specifiers;
+};
+typedef struct formats format_specifiers;
 
 
+int get_format_func(const char *format, format_specifiers fmt[], va_list list);
 #endif /* HOLBERTON_H_ */
