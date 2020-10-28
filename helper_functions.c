@@ -29,9 +29,8 @@ char *_itoa(int i, char *strout, int base)
 
 	if (i < 0)
 	{
-        putchar('-');
-        i = -i;
-
+		sign = 1;
+		i *= -1;
 	}
 	while (i)
 	{
@@ -88,18 +87,4 @@ int print_percent(va_list list)
 	va_arg(list, int);
 	_putchar('%');
 	return (1);
-}
-void pr_uint(unsigned int n) {
-    if (n / 10 != 0)
-        pr_uint(n / 10);
-    _putchar((n % 10) + '0');
-  
-}
-
-void pr_int(int n) {
-    if (n < 0) {
-        _putchar('-');
-        n = -n;
-    }
-    pr_uint((unsigned int) n);
 }

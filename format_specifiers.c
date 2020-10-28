@@ -47,15 +47,9 @@ int print_string(va_list list)
 int print_int(va_list list)
 {
 	char tmp[20];
-	int i, len, n;
-  n = va_arg(list, int);
+	int i, len;
 
-  if (n < 0)
-  {
-    pr_int(n);
-  }  
-  else
-	  _itoa(n, tmp, 10);
+	_itoa(va_arg(list, int), tmp, 10);
 	for (len = 0; tmp[len] != 0; len++)
 		;
 	for (i = len - 1; i >= 0; i--)
