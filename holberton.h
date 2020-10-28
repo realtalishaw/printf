@@ -7,7 +7,8 @@
 #include <string.h>
 #include <unistd.h>
 
-
+void pr_uint(unsigned int n);
+void pr_int(int n);
 char *_itoa(int i, char *strout, int base);
 int _printf(const char *format, ...);
 int _strlen_recursion(char *s);
